@@ -14,10 +14,6 @@ A modern job listing dashboard built with **Next.js** and **Tailwind CSS** as pa
 - [How to Run](#how-to-run)
 - [Project Structure](#project-structure)
 - [Implementation Details](#implementation-details)
-- [Grading Criteria](#grading-criteria)
-- [Attribution](#attribution)
-- [Contact](#contact)
-
 ---
 
 ## Overview
@@ -58,7 +54,7 @@ This project is **Task 6** in the A2SV Web Track series. The goal is to build a 
 
 ### 3. Ideal Candidate, When & Where, Required Skills
 
-![Ideal Candidate, When & Where, Required Skills](screenshots/idealCandidate-whenAndWhere-requiredSkills .png)
+![Ideal Candidate, When & Where, Required Skills](screenshots/idealCandidate-whenAndWhere-requiredSkills.png)
 
 *Shows the ideal candidate profile, event details (when & where), and required skills for the job.*
 

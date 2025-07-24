@@ -121,12 +121,12 @@ a2sv-web-track-task-series/
 │   └── types/
 │       └── JobCardProps.tsx
 ├── public/
-│   ├── job1.png
-│   ├── startDate.svg
-│   ├── deadline.svg
-│   ├── endDate.svg
-│   ├── location.svg
-│   └── postedOn.svg
+│   └── job1.png
+│   
+│   
+│   
+│   
+│   
 └── screenshots/
     ├── job-card.png
     ├── description-responsibilities-about-categories.png

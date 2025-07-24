@@ -122,11 +122,6 @@ a2sv-web-track-task-series/
 │       └── JobCardProps.tsx
 ├── public/
 │   └── job1.png
-│   
-│   
-│   
-│   
-│   
 └── screenshots/
     ├── job-card.png
     ├── description-responsibilities-about-categories.png

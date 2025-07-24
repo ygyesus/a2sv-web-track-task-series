@@ -1,25 +1,51 @@
 import Image from "next/image";
 import JobCard from "./components/JobCard";
 import { type JobCardProps } from "./types/JobCardProps";
-import logo from '../public/logo.png';
+import { promises as fs } from 'fs';
+import Dashboard from "./components/Dashboard";
 
 
-export default function Home() {
-
+export default async function Home() {
+  const file = await fs.readFile(process.cwd() + '/app/jobs.json', 'utf8');
+  const data = JSON.parse(file);
+  const newJob = data["job_postings"][0]
   const newJobCardProps: JobCardProps = {
-    title: "Social Media Assistant",
-    description: "As a Social Media Assistant, you will work closely with the social media manager or marketing team to execute social media strategies and campaigns. You will be responsible for assisting in the creation and scheduling of engaging content, monitoring social media channels, and interacting with followers. Your primary goal will be to enhance brand visibility, foster positive relationships with the audience, and drive engagement and conversions.",
-    company: "Yenigat Birhan NonProfit Organization",
-    logoLink: "/logo.png",
-    location: "Addis Ababa, Ethiopia"
+    title: newJob.title,
+    description: newJob.description,
+    company: newJob.company,
+    logoLink: newJob.image,
+    location: newJob.about.location,
+
+    responsibilities: newJob.responsibilities,
+    idealCandidate: newJob["ideal_candidate"],
+    whenAndWhere: newJob["when_where"],
+    about: newJob.about,
+    categories: newJob.about.categories,
+    requiredSkills: newJob.about["required_skills"]
   }
-  const { title, description, company, logoLink, location } = newJobCardProps
+  const {
+    title, description, company, logoLink, location,
+    responsibilities, idealCandidate, whenAndWhere, about, categories, requiredSkills
+  } = newJobCardProps
   return (
-    <JobCard title={title}
-      description={description}
-      company={company}
-      logoLink={logoLink}
-      location={location}
-    />
+    <>
+
+      <JobCard
+        title={title}
+        description={description}
+        company={company}
+        logoLink={logoLink}
+        location={location}
+      />
+      <Dashboard
+        description={description}
+        responsibilities={responsibilities}
+        idealCandidate={idealCandidate}
+        whenAndWhere={whenAndWhere}
+        about={about}
+        categories={categories}
+        requiredSkills={requiredSkills}
+      />
+    </>
   );
 }

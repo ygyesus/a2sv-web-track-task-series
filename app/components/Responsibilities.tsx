@@ -4,12 +4,14 @@ import { poppins, epilogue } from '../layout'
 import CircularTick from './svg/CircularTick'
 
 const Responsibilities = ({ responsibilities }: JobCardProps) => {
+    const responsibilitiesArray = responsibilities.split('\n')
     return (
         <div>
             <h3 className={`${poppins.className} text-2xl`}>Responsibilities</h3>
             <ul>
                 {
-                    responsibilities.map(
+
+                    responsibilitiesArray.map(
                         responsibility =>
                             <li
                                 key={crypto.randomUUID()}

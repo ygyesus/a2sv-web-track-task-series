@@ -3,11 +3,13 @@ import { JobCardProps } from '../types/JobCardProps'
 
 import { poppins, epilogue } from '../layout'
 const IdealCandidate = ({ idealCandidate }: JobCardProps) => {
+    console.log("IDEALCANDIDATE")
+    console.log(idealCandidate)
     return (
         <div>
             <h3 className={`${poppins.className} text-2xl`}>Ideal Candidate we want</h3>
             <ul>
-                <li key="ageAndGender"
+                {/* <li key="ageAndGender"
                     className={`${epilogue.className} list-disc ml-8`}>
                     {idealCandidate["age"]} {idealCandidate["gender"]}
                 </li>
@@ -20,7 +22,8 @@ const IdealCandidate = ({ idealCandidate }: JobCardProps) => {
                     </li>
 
                 }
-                )}
+                )} */}
+                <p>{idealCandidate}</p>
             </ul>
         </div>
     )

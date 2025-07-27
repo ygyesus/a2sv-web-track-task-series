@@ -1,3 +1,4 @@
+// Renders Dashboard for a specific job with details such as Description, Responsibilities, and When and Where to apply
 import React from 'react'
 
 import Description from './Description'

@@ -70,6 +70,38 @@ The goal of this project is to integrate data from a provided API endpoint into 
 
 ---
 
+### 3. Loading States - Job Listings Page
+
+![Loading Job Listings](screenshots/loading-opportunities-search.png)
+
+*Shows the loading state when fetching job opportunities from the API, providing user feedback during data retrieval.*
+
+---
+
+### 4. Loading States - Individual Job Details
+
+![Loading Job Details](screenshots/loading-opportunities-id.png)
+
+*Displays the loading state when fetching specific job details, ensuring users know the application is working on their request.*
+
+---
+
+### 5. Error Handling - Job Listings Page
+
+![Error Handling Job Listings](screenshots/error-opportunities-search.png)
+
+*Demonstrates graceful error handling when the API request for job listings fails, showing user-friendly error messages.*
+
+---
+
+### 6. Error Handling - Individual Job Details
+
+![Error Handling Job Details](screenshots/error-opportunities-id.png)
+
+*Shows error handling for individual job detail requests, ensuring the application remains stable even when API calls fail.*
+
+---
+
 ## API Integration
 
 ### API Endpoint

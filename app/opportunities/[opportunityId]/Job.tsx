@@ -7,7 +7,7 @@ const Job = ({ opportunityId }) => {
     const { data, isError, isLoading } = useGetOpportunityByIdQuery(opportunityId)
 
     if (isError) {
-        return <h1> OH NO WE GOT AN ERROR</h1>
+        return <h1> ERROR LOADING THIS JOB</h1>
     }
     if (isLoading) {
         return <h1>Loading...</h1>

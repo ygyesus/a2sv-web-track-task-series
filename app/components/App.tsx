@@ -31,9 +31,9 @@ const App = () => {
             </div>
             <div className={`${epilogue.className} mt-5 text-[16px]`}><span className='mr-2 text-base text-gray-400'>Sort by:</span> <span className='mr-2'>Most relevant</span>
                 <svg className="inline" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.6667 5.66663L8 10.3333L3.33333 5.66663" stroke="#4640DE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M12.6667 5.66663L8 10.3333L3.33333 5.66663" stroke="black" stroke-opacity="0.2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M12.6667 5.66663L8 10.3333L3.33333 5.66663" stroke="black" stroke-opacity="0.2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M12.6667 5.66663L8 10.3333L3.33333 5.66663" stroke="#4640DE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M12.6667 5.66663L8 10.3333L3.33333 5.66663" stroke="black" strokeOpacity="0.2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M12.6667 5.66663L8 10.3333L3.33333 5.66663" stroke="black" strokeOpacity="0.2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             </div>
         </div>

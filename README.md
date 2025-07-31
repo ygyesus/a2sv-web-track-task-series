@@ -1,8 +1,30 @@
 # Job Opportunities Application
 
-A modern job opportunities dashboard built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **Redux Toolkit Query** as part of the A2SV Web Track Task Series. This project demonstrates API integration, dynamic routing, component-based UI development, and state management.
+---
 
-**Repository:** [https://github.com/ygyesus/a2sv-web-track-task-series.git](https://github.com/ygyesus/a2sv-web-track-task-series.git)
+## 🛡️ Authentication Flow (NextAuth, Custom API, Google OAuth)
+
+This project features a robust authentication system using NextAuth, custom API endpoints, and Google OAuth. Below are screenshots and descriptions of the authentication flow:
+
+### 0. Automatic Redirect to Sign Up if Not Signed In
+
+![Automatic Redirect to Sign Up](screenshots/automatic-redirect-to-signup-page-if-not-signed-in.png)
+*If a user tries to access a protected route without being signed in, they are automatically redirected to the sign up page.*
+
+### 1. Sign Up Page with Validation
+
+![Sign Up Validation](screenshots/signup-validating-user-input.png)
+*The sign up page validates user input and displays errors for invalid or missing fields. Google sign up is also supported.*
+
+### 2. Email Verification
+
+![Email Verification](screenshots/email-verification.png)
+*After signing up, users must enter a 4-digit code sent to their email to verify their account. The UI includes a countdown and resend code option.*
+
+### 3. Error: User Already Exists
+
+![User Already Exists Error](screenshots/displays-error-if-user-already-exists.png)
+*If a user tries to sign up with an email that already exists, a clear error message is shown.*
 
 ---
 

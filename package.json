@@ -12,13 +12,16 @@
     "@next/font": "^14.2.15",
     "@reduxjs/toolkit": "^2.8.2",
     "next": "^15.4.4",
+    "next-auth": "^4.24.11",
     "postcss": "^8.5.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-hook-form": "^7.61.1",
     "react-redux": "^9.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@hookform/devtools": "^4.4.0",
     "@tailwindcss/postcss": "^4.1.11",
     "@types/node": "^20",
     "@types/react": "^19",

@@ -1,10 +1,7 @@
-'use client'
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Poppins, Epilogue } from 'next/font/google'
-import { Provider } from "react-redux";
-import { store } from "@/lib/store";
 import { ReduxProvider } from "./service/ReduxProvider";
 export const poppins = Poppins({
   subsets: ['latin'],
@@ -26,7 +23,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
+// export const metadata: Metadata = {
+//   title: "Job Opportunities - A2SV Web Track",
+//   description: "A modern job opportunities dashboard built with Next.js and Redux Toolkit Query",
+// };
 
 export default function RootLayout({
   children,

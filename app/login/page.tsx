@@ -25,7 +25,6 @@ export default function LoginForm() {
         if (res?.error) {
             setServerError(res.error);
         } else {
-            // Use Next.js router for client-side navigation
             if (typeof window !== 'undefined') {
                 const { useRouter } = require('next/navigation');
                 const router = useRouter();

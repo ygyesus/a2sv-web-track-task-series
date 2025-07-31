@@ -31,7 +31,6 @@ export default function VerifyEmailForm() {
         useRef<HTMLInputElement>(null),
     ];
 
-    // Countdown logic
     useEffect(() => {
         if (timer > 0) {
             const interval = setInterval(() => setTimer((t) => t - 1), 1000);
@@ -39,7 +38,6 @@ export default function VerifyEmailForm() {
         }
     }, [timer]);
 
-    // Resend code handler
     const handleResend = async () => {
         setResending(true);
         setServerError("");
@@ -61,7 +59,6 @@ export default function VerifyEmailForm() {
         setResending(false);
     };
 
-    // OTP input logic
     const handleOtpChange = (e: React.ChangeEvent<HTMLInputElement>, idx: number) => {
         const value = e.target.value.replace(/[^0-9]/g, "").slice(0, 1);
         setValue(`otp${idx + 1}` as any, value);

@@ -2,32 +2,6 @@
 
 ---
 
-## 🛡️ Authentication Flow (NextAuth, Custom API, Google OAuth)
-
-This project features a robust authentication system using NextAuth, custom API endpoints, and Google OAuth. Below are screenshots and descriptions of the authentication flow:
-
-### 0. Automatic Redirect to Sign Up if Not Signed In
-
-![Automatic Redirect to Sign Up](screenshots/automatic-redirect-to-signup-page-if-not-signed-in.png)
-*If a user tries to access a protected route without being signed in, they are automatically redirected to the sign up page.*
-
-### 1. Sign Up Page with Validation
-
-![Sign Up Validation](screenshots/signup-validating-user-input.png)
-*The sign up page validates user input and displays errors for invalid or missing fields. Google sign up is also supported.*
-
-### 2. Email Verification
-
-![Email Verification](screenshots/email-verification.png)
-*After signing up, users must enter a 4-digit code sent to their email to verify their account. The UI includes a countdown and resend code option.*
-
-### 3. Error: User Already Exists
-
-![User Already Exists Error](screenshots/displays-error-if-user-already-exists.png)
-*If a user tries to sign up with an email that already exists, a clear error message is shown.*
-
----
-
 ## Table of Contents
 
 - [Overview](#overview)
@@ -57,6 +31,7 @@ The goal of this project is to integrate data from a provided API endpoint into 
 - **Loading States:** User-friendly loading indicators
 - **Responsive Design:** Modern UI with Tailwind CSS
 
+
 ### Job Card Features
 - **Company Logo:** Dynamic company logos from API
 - **Job Title & Company:** Real job information
@@ -76,50 +51,72 @@ The goal of this project is to integrate data from a provided API endpoint into 
 
 ## Screenshots
 
-### 1. Job Cards with Dynamic API Data
+### 1. Automatic Redirect to Sign Up if Not Signed In
+
+![Automatic Redirect to Sign Up](screenshots/automatic-redirect-to-signup-page-if-not-signed-in.png)
+*If a user tries to access a protected route without being signed in, they are automatically redirected to the sign up page.*
+
+---
+
+### 2. Sign Up Page with Validation
+
+![Sign Up Validation](screenshots/signup-validating-user-input.png)
+*The sign up page validates user input and displays errors for invalid or missing fields. Google sign up is also supported.*
+
+---
+
+### 3. Email Verification
+
+![Email Verification](screenshots/email-verification.png)
+*After signing up, users must enter a 4-digit code sent to their email to verify their account. The UI includes a countdown and resend code option.*
+
+---
+
+### 4. Error: User Already Exists
+
+![User Already Exists Error](screenshots/displays-error-if-user-already-exists.png)
+*If a user tries to sign up with an email that already exists, a clear error message is shown.*
+
+---
+
+### 5. Job Cards with Dynamic API Data
 
 ![Job Cards with API Data](screenshots/job-card-with-tags-based-on-api-data.png)
-
 *Shows multiple job cards populated with real API data, including company logos, job titles, descriptions, and dynamic tags based on opportunity type and categories.*
 
 ---
 
-### 2. Dynamic Routing - Job Details Page
+### 6. Dynamic Routing - Job Details Page
 
 ![Dynamic Routing](screenshots/click-inside-job-card-to-find-dynamic-route-for-the-job.png)
-
 *Demonstrates the dynamic routing functionality where clicking on a job card navigates to a detailed view with comprehensive job information.*
 
 ---
 
-### 3. Loading States - Job Listings Page
+### 7. Loading States - Job Listings Page
 
 ![Loading Job Listings](screenshots/loading-opportunities-search.png)
-
 *Shows the loading state when fetching job opportunities from the API, providing user feedback during data retrieval.*
 
 ---
 
-### 4. Loading States - Individual Job Details
+### 8. Loading States - Individual Job Details
 
 ![Loading Job Details](screenshots/loading-opportunities-id.png)
-
 *Displays the loading state when fetching specific job details, ensuring users know the application is working on their request.*
 
 ---
 
-### 5. Error Handling - Job Listings Page
+### 9. Error Handling - Job Listings Page
 
 ![Error Handling Job Listings](screenshots/error-opportunities-search.png)
-
 *Demonstrates graceful error handling when the API request for job listings fails, showing user-friendly error messages.*
 
 ---
 
-### 6. Error Handling - Individual Job Details
+### 10. Error Handling - Individual Job Details
 
 ![Error Handling Job Details](screenshots/error-opportunities-id.png)
-
 *Shows error handling for individual job detail requests, ensuring the application remains stable even when API calls fail.*
 
 ---

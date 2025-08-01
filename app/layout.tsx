@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Poppins, Epilogue } from 'next/font/google'
 import { ReduxProvider } from "./service/ReduxProvider";
+import { SessionProvider } from "next-auth/react";
+import Header from "./components/Header";
+
 export const poppins = Poppins({
   subsets: ['latin'],
   weight: '900'
@@ -36,13 +39,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ReduxProvider>
-        <body
-          className={`
-          ${geistSans.variable} ${geistMono.variable} 
-          p-8 antialiased`}
-        >
-          {children}
-        </body>
+        <SessionProvider>
+          <body
+            className={`
+            ${geistSans.variable} ${geistMono.variable} 
+            antialiased`}
+          >
+            <Header />
+            <main className="p-8">
+              {children}
+            </main>
+          </body>
+        </SessionProvider>
       </ReduxProvider>
     </html>
   );

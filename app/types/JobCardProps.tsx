@@ -5,7 +5,7 @@ interface JobCardProps {
     responsibilities: string,
     orgName: string,
     logoUrl: string,
-    location: Array<string>,
+    location: string,
     idealCandidate: Object,
     whenAndWhere: string,
     about: Object,

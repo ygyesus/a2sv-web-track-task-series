@@ -27,7 +27,7 @@ const App = () => {
         <div className="flex justify-between mb-10">
             <div>
                 <h1 className={`${poppins.className} text-[32px]`}>Opportunities</h1>
-                <p className={`${epilogue.className} text-[16px]`}>Showing 73 results</p>
+                <p className={`${epilogue.className} text-[16px]`}>Showing {jobs?.length || 0} results</p>
             </div>
             <div className={`${epilogue.className} mt-5 text-[16px]`}><span className='mr-2 text-base text-gray-400'>Sort by:</span> <span className='mr-2'>Most relevant</span>
                 <svg className="inline" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

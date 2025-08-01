@@ -25,11 +25,7 @@ export default function LoginForm() {
         if (res?.error) {
             setServerError(res.error);
         } else {
-            if (typeof window !== 'undefined') {
-                const { useRouter } = require('next/navigation');
-                const router = useRouter();
-                router.push('/opportunities/search');
-            }
+            window.location.href = '/opportunities/search';
         }
     };
 

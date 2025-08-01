@@ -55,7 +55,9 @@ export const options = {
           const data = await res.json();
           if (res.ok && data.accessToken) {
             return {
+              id: data.data?.id || credentials.email,
               email: credentials.email,
+              name: data.data?.name || credentials.email,
               role: "User",
               accessToken: data.accessToken,
             };
@@ -69,11 +71,17 @@ export const options = {
   ],
   callbacks: {
     async jwt({ token, user }) {
-      if (user) token.role = user.role;
+      if (user) {
+        token.role = user.role;
+        token.accessToken = user.accessToken;
+      }
       return token;
     },
     async session({ session, token }) {
-      if (session?.user) session.user.role = token.role;
+      if (session?.user) {
+        session.user.role = token.role;
+        session.accessToken = token.accessToken;
+      }
       return session;
     },
   },

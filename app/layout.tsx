@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Poppins, Epilogue } from 'next/font/google'
 import { ReduxProvider } from "./service/ReduxProvider";
-import { SessionProvider } from "next-auth/react";
 import Header from "./components/Header";
 
 export const poppins = Poppins({
@@ -26,10 +25,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// export const metadata: Metadata = {
-//   title: "Job Opportunities - A2SV Web Track",
-//   description: "A modern job opportunities dashboard built with Next.js and Redux Toolkit Query",
-// };
+export const metadata: Metadata = {
+  title: "Job Opportunities - A2SV Web Track",
+  description: "A modern job opportunities dashboard built with Next.js and Redux Toolkit Query",
+};
 
 export default function RootLayout({
   children,
@@ -38,20 +37,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ReduxProvider>
-        <SessionProvider>
-          <body
-            className={`
-            ${geistSans.variable} ${geistMono.variable} 
-            antialiased`}
-          >
-            <Header />
-            <main className="p-8">
-              {children}
-            </main>
-          </body>
-        </SessionProvider>
-      </ReduxProvider>
+      <body
+        className={`
+        ${geistSans.variable} ${geistMono.variable} 
+        antialiased`}
+      >
+        <ReduxProvider>
+          <Header />
+          <main className="p-8">
+            {children}
+          </main>
+        </ReduxProvider>
+      </body>
     </html>
   );
 }

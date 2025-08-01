@@ -1,4 +1,3 @@
-// "use client"
 import Image from "next/image";
 import JobCard from "../../components/JobCard";
 import { type JobCardProps } from "../../types/JobCardProps";

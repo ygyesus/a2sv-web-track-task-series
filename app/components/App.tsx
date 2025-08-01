@@ -14,11 +14,25 @@ const App = () => {
     const { data, isError, isLoading } = useGetAllOpportunitiesQuery("")
 
     if (isError) {
-        return <h1>ERROR</h1>
+        return (
+            <div className="flex items-center justify-center min-h-[400px]">
+                <div className="text-center">
+                    <h1 className={`${poppins.className} text-2xl text-red-600 mb-4`}>Error Loading Opportunities</h1>
+                    <p className={`${epilogue.className} text-gray-600`}>Please try refreshing the page or contact support if the problem persists.</p>
+                </div>
+            </div>
+        )
     }
 
     if (isLoading) {
-        return <h1>Loading...</h1>
+        return (
+            <div className="flex items-center justify-center min-h-[400px]">
+                <div className="text-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#4640DE] mx-auto mb-4"></div>
+                    <h1 className={`${poppins.className} text-xl text-gray-700`}>Loading Opportunities...</h1>
+                </div>
+            </div>
+        )
     }
     const jobs = data.data
 

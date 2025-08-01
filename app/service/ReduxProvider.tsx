@@ -10,8 +10,10 @@ import { Provider } from "react-redux";
 
 export const ReduxProvider = (props: React.PropsWithChildren) => {
     return (
-        <SessionProvider>
-            <Provider store={store}>{props.children}</Provider>
-        </SessionProvider>
+        <Provider store={store}>
+            <SessionProvider>
+                {props.children}
+            </SessionProvider>
+        </Provider>
     );
 };

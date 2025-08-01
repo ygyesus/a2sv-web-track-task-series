@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { signIn } from "next-auth/react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { epilogue, poppins } from '../layout';
+
 type FormValues = {
     name: string;
     email: string;
@@ -17,29 +18,41 @@ export default function SignUpForm() {
     const { register, handleSubmit, formState, watch } = form;
     const { errors } = formState;
     const [serverError, setServerError] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
     const router = useRouter();
     const searchParams = useSearchParams();
     const callbackUrl = searchParams.get("callbackUrl") || "/opportunities/search";
 
     const onSubmit = async (data: FormValues) => {
         setServerError("");
+        setIsLoading(true);
+        
         try {
             const res = await fetch("https://akil-backend.onrender.com/signup", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    ...data,
+                    name: data.name,
+                    email: data.email,
+                    password: data.password,
+                    confirmPassword: data.confirmPassword,
                     role: "user"
                 }),
             });
+            
             const result = await res.json();
+            console.log("Signup response:", result);
+            
             if (!res.ok) {
                 setServerError(result.message || "Signup failed");
             } else {
                 router.push(`/verify-email?email=${encodeURIComponent(data.email)}&callbackUrl=${encodeURIComponent(callbackUrl)}`);
             }
         } catch (err) {
+            console.error("Signup error:", err);
             setServerError("Network error");
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -129,8 +142,12 @@ export default function SignUpForm() {
                     <p className="text-red-500 text-sm">{errors.confirmPassword?.message}</p>
                 </div>
                 {serverError && <p className="text-red-500 text-sm mb-2">{serverError}</p>}
-                <button className="w-full bg-[#4640DE] text-white py-2 rounded-4xl font-semibold" type="submit">
-                    Continue
+                <button 
+                    className="w-full bg-[#4640DE] text-white py-2 rounded-4xl font-semibold disabled:opacity-50" 
+                    type="submit"
+                    disabled={isLoading}
+                >
+                    {isLoading ? "Creating Account..." : "Continue"}
                 </button>
             </form>
             <p className="mt-4 text-gray-600">

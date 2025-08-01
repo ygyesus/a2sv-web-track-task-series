@@ -80,19 +80,27 @@ export default function VerifyEmailForm() {
     const onSubmit = async (data: any) => {
         setServerError("");
         const OTP = [data.otp1, data.otp2, data.otp3, data.otp4].join("");
+        
+        console.log("Verifying email with:", { email, OTP });
+        
         try {
             const res = await fetch("https://akil-backend.onrender.com/verify-email", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, OTP }),
             });
+            
             const result = await res.json();
+            console.log("Verification response:", result);
+            
             if (!res.ok) {
                 setServerError(result.message || "Verification failed");
             } else {
+                console.log("Email verified successfully, redirecting to:", callbackUrl);
                 router.push(callbackUrl);
             }
         } catch {
+            console.error("Network error during verification");
             setServerError("Network error");
         }
     };

@@ -44,6 +44,8 @@ export const options = {
       },
       async authorize(credentials) {
         try {
+          console.log("Attempting to authenticate with credentials:", { email: credentials.email });
+          
           const res = await fetch("https://akil-backend.onrender.com/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -52,7 +54,10 @@ export const options = {
               password: credentials.password,
             }),
           });
+          
           const data = await res.json();
+          console.log("Login API response:", { status: res.status, data });
+          
           if (res.ok && data.accessToken) {
             return {
               id: data.data?.id || credentials.email,
@@ -61,11 +66,14 @@ export const options = {
               role: "User",
               accessToken: data.accessToken,
             };
+          } else {
+            console.log("Login failed:", data.message || "Unknown error");
+            throw new Error(data.message || "Invalid credentials");
           }
         } catch (error) {
-          console.log(error);
+          console.error("Authentication error:", error);
+          throw error;
         }
-        return null;
       },
     }),
   ],
